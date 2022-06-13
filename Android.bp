@@ -128,7 +128,7 @@ android_library {
         "colorkt",
         "themelib",
         "SettingsLib",
-        "VendorSupport-preference",
+        "VendorSupport-Libs",
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",
