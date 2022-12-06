@@ -36,6 +36,7 @@ import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.provider.Settings;
 import android.util.FloatProperty;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
@@ -392,9 +393,13 @@ public class AllAppsTransitionController
         builder.add(anim);
 
         setAlphas(toState, config, builder);
+
+        boolean mFlingVibrate = Settings.System.getInt(mLauncher.getContentResolver(),
+                Settings.System.SCROLL_FLING_HAPTIC_FEEDBACK, 1) != 0;
+
         // This controls both haptics for tapping on QSB and going to all apps.
         if (ALL_APPS.equals(toState) && mLauncher.isInState(NORMAL) &&
-                !FeatureFlags.ENABLE_PREMIUM_HAPTICS_ALL_APPS.get()) {
+                !FeatureFlags.ENABLE_PREMIUM_HAPTICS_ALL_APPS.get() && !mFlingVibrate) {
             mLauncher.getAppsView().performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY,
                     HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
         }
