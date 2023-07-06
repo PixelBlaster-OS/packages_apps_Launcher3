@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package co.aospa.launcher;
+package com.blaster.launcher;
 
 import android.app.smartspace.SmartspaceTarget;
 import android.os.Bundle;
 
-import co.aospa.launcher.ParanoidLauncherModelDelegate.SmartspaceItem;
+import com.blaster.launcher.BlasterLauncherModelDelegate.SmartspaceItem;
 
 import com.android.launcher3.model.BgDataModel;
 import com.android.launcher3.qsb.LauncherUnlockAnimationController;
@@ -32,7 +32,7 @@ import com.google.android.systemui.smartspace.BcSmartspaceDataProvider;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ParanoidLauncher extends QuickstepLauncher {
+public class BlasterLauncher extends QuickstepLauncher {
 
     private BcSmartspaceDataProvider mSmartspacePlugin = new BcSmartspaceDataProvider();
     private LauncherUnlockAnimationController mUnlockAnimationController =

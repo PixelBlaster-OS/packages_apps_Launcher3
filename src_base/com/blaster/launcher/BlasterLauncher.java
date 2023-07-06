@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package co.aospa.launcher;
+package com.blaster.launcher;
 
 import com.android.launcher3.Launcher;
 
-public class ParanoidLauncher extends Launcher {
+public class BlasterLauncher extends Launcher {
 
 }
